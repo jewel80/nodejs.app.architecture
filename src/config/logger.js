@@ -47,7 +47,7 @@ const infoLogger = () => expressWinston.logger({
         new winston.transports.Console(),
         new winston.transports.DailyRotateFile(
             {
-                filename: 'Logged/log-info-%DATE%.log',
+                filename: 'Logged/info/log-info-%DATE%.log',
                 datePattern: 'yyyy-MM-DD-HH'
             }
         ),
@@ -69,7 +69,7 @@ const errorLogger = (dbUrl) => expressWinston.errorLogger({
         new winston.transports.Console(),
         new winston.transports.DailyRotateFile(
             {
-                filename: 'log-error-%DATE%.log',
+                filename: 'Logged/error/log-error-%DATE%.log',
                 datePattern: 'yyyy-MM-DD-HH'
             }
         ),

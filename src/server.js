@@ -6,6 +6,7 @@ dotenv.config();
 const { connectWithDb, dbUrl } = require("./config/mongoDB")
 const {infoLogger, errorLogger} = require("./config/logger")
 
+const configureRouters =require('./routers/index')
 
 
 
@@ -14,13 +15,15 @@ app.use(express.json())
 // app.use(bodyParser);
 app.use(cors());
 
+app.use(infoLogger());
+app.use(errorLogger(dbUrl));
+
+console.log(configureRouters(app));
 
 app.get('/', function(req, res){
     res.send(".......Hello world!");
  });
 
-app.use(infoLogger());
-app.use(errorLogger(dbUrl));
 
 
 
@@ -35,4 +38,4 @@ app.listen(process.env.PORT || 4100, () => {
 
 
 // export default app;
-// module.exports=app;
+module.exports=app;
