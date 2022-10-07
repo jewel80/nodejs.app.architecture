@@ -11,10 +11,6 @@ class BadRequest extends GeneralError {
     constructor(message) {
         super(message);
         this.name = 'BadRequest';
-
-        console.log('-------------------------')
-        console.log( this.name)
-        console.log('-------------------------')
     }
     getCode() { return 400; }
 }
