@@ -18,24 +18,19 @@ app.use(cors());
 app.use(infoLogger());
 app.use(errorLogger(dbUrl));
 
-console.log(configureRouters(app));
+configureRouters(app)
 
 app.get('/', function(req, res){
     res.send(".......Hello world!");
  });
 
 
-
-
-
 connectWithDb()
 
-console.log(process.env.PORT);
 
 app.listen(process.env.PORT || 4100, () => {
     console.log('app is running on port', process.env.PORT)
 })
 
 
-// export default app;
 module.exports=app;
