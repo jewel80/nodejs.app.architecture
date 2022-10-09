@@ -1,9 +1,10 @@
+//imported required file and package...
 const express = require("express");
-const { saveUser, getAllUsers, update, deleteById,getUserById, } = require("../services/userService");
-const validators = require("../models/request.models");
-const { handleValidation } = require("../middlewares");
-const { _response } = require("../utils/response");
 const router = express.Router();
+const { saveUser, getAllUsers, update, deleteById,getUserById, } = require("../services/userService");
+const { handleValidation } = require("../middlewares");
+const validators = require("../models/request.models");
+const { _response } = require("../utils/response");
 
 /**
  * Retrieve all record...

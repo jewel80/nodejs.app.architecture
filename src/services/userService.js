@@ -1,5 +1,5 @@
-const { UserViewModel } = require("../models/view.models");
 const models = require("../models/data.models/index");
+const { UserViewModel } = require("../models/view.models");
 const { NotFound } = require("../utils/errors");
 
 /**
@@ -71,6 +71,7 @@ const getUserById = async (id) => {
 }
 
 
+//export requied function...
 module.exports = {
     getAllUsers,
     saveUser,

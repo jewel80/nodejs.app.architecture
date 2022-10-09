@@ -8,7 +8,7 @@ const winstonFile =require("winston-daily-rotate-file");
 /**
  * @param {*} req 
  * @param {*} res 
- * @returns {object} get Message retunr..  
+ * @returns {object} get Message return..  
  */
 const getMessage = (req, res) => {
     let obj = {
@@ -45,6 +45,7 @@ const esTransport = new ElasticsearchTransport.ElasticsearchTransport(elasticsea
 const infoLogger = () => expressWinston.logger({
     transports: [
         new winston.transports.Console(),
+        //File create as this is "yyyy-MM-DD-HH" format...
         new winston.transports.DailyRotateFile(
             {
                 filename: 'Logged/info/log-info-%DATE%.log',
