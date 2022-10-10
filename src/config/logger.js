@@ -14,7 +14,7 @@ const getMessage = (req, res) => {
     let obj = {
         correlationId: req.headers['x-correlation-id'],
         requestBody: req.body,
-        // path: req.headers.host + req.originalUrl,
+        path: req.headers.host + req.originalUrl,
     };
     return JSON.stringify(obj);
 }

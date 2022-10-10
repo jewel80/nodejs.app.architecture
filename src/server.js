@@ -12,3 +12,6 @@ app.listen(process.env.PORT || 4100, () => {
         
     console.log('app is running on port', process.env.PORT || 4100);
 });
+
+// process.on('warning', e => console.warn(e.stack));
+// process.setMaxListeners(0);

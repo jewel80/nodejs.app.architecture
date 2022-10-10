@@ -7,16 +7,18 @@ const dbName = process.env.DB_NAME || "product-db";
 const dbUrl = `mongodb://${HOST}:27017/${dbName}`;
 exports.dbUrl =dbUrl;
 
-//if, have any option...
 const options = {};
 
-//MongoDB connection....
 const connectWithDb = () => {
-    mongoose.connect(dbUrl, options, (err, db) => {
-        if (err) {
-            console.error(err);
-        }
-        else console.log("database connection established and db-name:", dbName);
-    });
-};
+    mongoose.connect(dbUrl, options, {
+        // user: process.env.DB_USER,
+        // pass: process.env.DB_PASSWORD,
+        // dbName: process.env.DB_NAME,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(con => {
+        console.log(`MongoDB Database connected with HOST: ${con.connection.host} and DB: ${dbName}`);
+    })
+}
+
 exports.connectWithDb = connectWithDb;
