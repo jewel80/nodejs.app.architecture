@@ -13,7 +13,8 @@ const winstonFile =require("winston-daily-rotate-file");
 const getMessage = (req, res) => {
     let obj = {
         correlationId: req.headers['x-correlation-id'],
-        requestBody: req.body
+        requestBody: req.body,
+        // path: req.headers.host + req.originalUrl,
     };
     return JSON.stringify(obj);
 }
@@ -82,3 +83,23 @@ const errorLogger = (dbUrl) => expressWinston.errorLogger({
     msg: '{ "correlationId": "{{req.headers["x-correlation-id"]}}", "error": "{{err.message}}" }'
 });
 exports.errorLogger = errorLogger;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

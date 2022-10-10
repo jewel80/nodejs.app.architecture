@@ -18,7 +18,7 @@ app.use(express.json());
 //success requrest handle uesd to app...
 app.use(handleRequest);
 
-//if, {"ENVIRONMENT = TEST"} igonre logged function called..
+//if, {"ENVIRONMENT = TEST"} igonre "infoLogger()" function called..
 if (process.env.ENVIRONMENT != 'TEST')
     app.use(infoLogger());
 
