@@ -1,12 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-
-
-const { connectWithDb, dbUrl } = require("./config/mongoDB")
 const { infoLogger } = require("./config/logger")
-const configureRouters = require('./routers/index')
-
 const configureRoutes = require("./routers/index");
 const { handleRequest, handleError } = require("./middlewares");
 const swaggerUI = require("swagger-ui-express");
